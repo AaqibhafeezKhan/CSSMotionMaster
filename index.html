@@ -1,1 +1,208 @@
-
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>CSS Animation Showcase</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+   <body>
+      <header>
+         <h1>CSS Animation Showcase</h1>
+         <div class="controls">
+            <div class="filters">
+               <button class="filter-btn active" data-filter="all">All</button>
+               <button class="filter-btn" data-filter="hover">Hover Effects</button>
+               <button class="filter-btn" data-filter="keyframe">Keyframe Animations</button>
+               <button class="filter-btn" data-filter="button">Button Effects</button>
+               <button class="filter-btn" data-filter="text">Text Animations</button>
+               <button class="filter-btn" data-filter="background">Background Effects</button>
+            </div>
+            <div class="theme-toggle">
+               <button id="toggleTheme">Toggle Dark/Light</button>
+            </div>
+         </div>
+      </header>
+      <main>
+         <section class="animation-grid">
+            <div class="card" data-category="hover">
+               <div class="preview" data-animation="hover-effect">
+                  <div class="hover-box">Hover me!</div>
+               </div>
+               <div class="card-info">
+                  <h3>Hover Effect</h3>
+                  <p>Subtle hover transformation.</p>
+                  <button class="copy-btn" data-code=".hover-box { transition: transform 0.3s ease; } .hover-box:hover { transform: scale(1.1); }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="keyframe">
+               <div class="preview" data-animation="keyframe-rotate">
+                  <div class="rotate-box">Rotate</div>
+               </div>
+               <div class="card-info">
+                  <h3>Keyframe Rotation</h3>
+                  <p>Continuous rotation with keyframes.</p>
+                  <button class="copy-btn" data-code=".rotate-box { animation: rotate 3s linear infinite; } @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="button">
+               <div class="preview" data-animation="ripple-button">
+                  <button class="ripple-btn">Click Me</button>
+               </div>
+               <div class="card-info">
+                  <h3>Ripple Button</h3>
+                  <p>Button with a ripple effect on click.</p>
+                  <button class="copy-btn" data-code=".ripple-btn { position: relative; overflow: hidden; padding: 10px 20px; border: none; background: var(--primary-color); color: #fff; border-radius: 5px; cursor: pointer; } .ripple-btn::after { content: ''; position: absolute; background: rgba(255,255,255,0.5); width: 100px; height: 100px; opacity: 0; border-radius: 50%; transform: scale(0); transition: transform 0.5s, opacity 1s; } .ripple-btn:active::after { transform: scale(2); opacity: 1; transition: 0s; }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="text">
+               <div class="preview" data-animation="text-fade">
+                  <p class="fade-text">Animate Me</p>
+               </div>
+               <div class="card-info">
+                  <h3>Text Fade</h3>
+                  <p>Fading text animation using keyframes.</p>
+                  <button class="copy-btn" data-code=".fade-text { animation: fade 2s ease-in-out infinite; } @keyframes fade { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="background">
+               <div class="preview" data-animation="background-shift">
+                  <div class="bg-box">Background</div>
+               </div>
+               <div class="card-info">
+                  <h3>Background Shift</h3>
+                  <p>Dynamic shifting background gradients.</p>
+                  <button class="copy-btn" data-code=".bg-box { animation: bgShift 5s ease infinite; background: linear-gradient(45deg, #ff6b6b, #f7d794); background-size: 200% 200%; } @keyframes bgShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="keyframe">
+               <div class="preview" data-animation="bounce">
+                  <div class="bounce-box">Bounce</div>
+               </div>
+               <div class="card-info">
+                  <h3>Bounce Animation</h3>
+                  <p>Bouncy effect using keyframes.</p>
+                  <button class="copy-btn" data-code=".bounce-box { animation: bounce 2s infinite; background: var(--primary-color); color: #fff; padding: 20px; border-radius: 5px; } @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-30px); } 60% { transform: translateY(-15px); } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="hover">
+               <div class="preview" data-animation="flip-card">
+                  <div class="flip-card">
+                     <div class="flip-card-inner">
+                        <div class="flip-card-front">Front</div>
+                        <div class="flip-card-back">Back</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-info">
+                  <h3>Flip Card</h3>
+                  <p>Flip effect on hover using 3D transforms.</p>
+                  <button class="copy-btn" data-code=".flip-card { perspective: 1000px; width: 200px; height: 200px; margin: 0 auto; } .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; } .flip-card:hover .flip-card-inner { transform: rotateY(180deg); } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; border-radius: 10px; } .flip-card-front { background: var(--primary-color); color: #fff; } .flip-card-back { background: var(--secondary-color); color: #fff; transform: rotateY(180deg); }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="keyframe">
+               <div class="preview" data-animation="shadow-pulse">
+                  <div class="shadow-box">Pulse</div>
+               </div>
+               <div class="card-info">
+                  <h3>Shadow Pulse</h3>
+                  <p>Pulsating shadow effect using keyframes.</p>
+                  <button class="copy-btn" data-code=".shadow-box { animation: pulse 2s infinite; padding: 20px; background: var(--primary-color); color: #fff; border-radius: 5px; } @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(74,144,226,0.7); } 70% { box-shadow: 0 0 0 10px rgba(74,144,226,0); } 100% { box-shadow: 0 0 0 0 rgba(74,144,226,0); } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="keyframe">
+               <div class="preview" data-animation="slide-in">
+                  <div class="slide-box">Slide In</div>
+               </div>
+               <div class="card-info">
+                  <h3>Slide In</h3>
+                  <p>Element slides in from the left.</p>
+                  <button class="copy-btn" data-code=".slide-box { animation: slideIn 1s ease-out forwards; transform: translateX(-100%); background: var(--primary-color); color: #fff; padding: 20px; border-radius: 5px; } @keyframes slideIn { to { transform: translateX(0); } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="text">
+               <div class="preview" data-animation="glitch">
+                  <p class="glitch" data-text="Glitch">Glitch</p>
+               </div>
+               <div class="card-info">
+                  <h3>Glitch Text</h3>
+                  <p>Glitch effect using pseudo-elements and keyframes.</p>
+                  <button class="copy-btn" data-code=".glitch { position: relative; font-size: 2em; color: #fff; } .glitch::before, .glitch::after { content: attr(data-text); position: absolute; left: 0; top: 0; opacity: 0.8; } .glitch::before { color: red; animation: glitch 2s infinite linear alternate-reverse; } .glitch::after { color: blue; animation: glitch 2s infinite linear; } @keyframes glitch { 0% { clip: rect(10px, 9999px, 30px, 0); transform: translate(0); } 20% { clip: rect(5px, 9999px, 15px, 0); transform: translate(-2px, -2px); } 40% { clip: rect(20px, 9999px, 40px, 0); transform: translate(2px, 2px); } 60% { clip: rect(0px, 9999px, 25px, 0); transform: translate(-2px, 2px); } 80% { clip: rect(15px, 9999px, 35px, 0); transform: translate(2px, -2px); } 100% { clip: rect(10px, 9999px, 30px, 0); transform: translate(0); } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="keyframe">
+               <div class="preview" data-animation="neon-glow">
+                  <div class="neon-box">Neon Glow</div>
+               </div>
+               <div class="card-info">
+                  <h3>Neon Glow</h3>
+                  <p>Neon glow and pulsating light effect.</p>
+                  <button class="copy-btn" data-code=".neon-box { background: #000; color: #0f0; padding: 20px; border: 2px solid #0f0; text-align: center; animation: neon 1.5s ease-in-out infinite alternate; } @keyframes neon { from { box-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0; } to { box-shadow: 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0; } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="hover">
+               <div class="preview" data-animation="color-change">
+                  <div class="color-box">Hover for Color Change</div>
+               </div>
+               <div class="card-info">
+                  <h3>Color Change</h3>
+                  <p>Background color changes on hover.</p>
+                  <button class="copy-btn" data-code=".color-box { background: var(--primary-color); color: #fff; padding: 20px; transition: background 0.5s ease; } .color-box:hover { background: var(--secondary-color); }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="text">
+               <div class="preview" data-animation="skew">
+                  <p class="skew-text">Skew Me</p>
+               </div>
+               <div class="card-info">
+                  <h3>Skew Animation</h3>
+                  <p>Text skews back and forth using keyframes.</p>
+                  <button class="copy-btn" data-code=".skew-text { display: inline-block; animation: skewAnim 3s ease-in-out infinite; } @keyframes skewAnim { 0% { transform: skewX(0deg); } 50% { transform: skewX(20deg); } 100% { transform: skewX(0deg); } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="text">
+               <div class="preview" data-animation="gradient-text">
+                  <p class="gradient-text">Gradient Text</p>
+               </div>
+               <div class="card-info">
+                  <h3>Gradient Text</h3>
+                  <p>Text with animated gradient fill.</p>
+                  <button class="copy-btn" data-code=".gradient-text { font-size: 2em; background: linear-gradient(45deg, #f06, #4a90e2); background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 3s ease infinite; } @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="keyframe">
+               <div class="preview" data-animation="blur-in">
+                  <div class="blur-box">Blur In</div>
+               </div>
+               <div class="card-info">
+                  <h3>Blur In</h3>
+                  <p>Element transitions from blurred to clear.</p>
+                  <button class="copy-btn" data-code=".blur-box { padding: 20px; background: var(--secondary-color); color: #fff; border-radius: 5px; filter: blur(5px); animation: blurIn 1s forwards; } @keyframes blurIn { from { filter: blur(5px); opacity: 0; } to { filter: blur(0); opacity: 1; } }">Copy CSS</button>
+               </div>
+            </div>
+            <div class="card" data-category="text">
+               <div class="preview" data-animation="underline">
+                  <p class="underline-hover">Hover to Underline</p>
+               </div>
+               <div class="card-info">
+                  <h3>Underline Animation</h3>
+                  <p>Animated underline appears on hover.</p>
+                  <button class="copy-btn" data-code=".underline-hover { position: relative; display: inline-block; color: var(--text-color); } .underline-hover::after { content: ''; position: absolute; left: 0; bottom: -3px; width: 100%; height: 2px; background: var(--primary-color); transform: scaleX(0); transform-origin: right; transition: transform 0.3s ease; } .underline-hover:hover::after { transform: scaleX(1); transform-origin: left; }">Copy CSS</button>
+               </div>
+            </div>
+         </section>
+      </main>
+      <div class="modal" id="previewModal">
+         <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-preview"></div>
+            <div class="modal-info">
+               <h3 id="modalTitle"></h3>
+               <p id="modalDescription"></p>
+               <button id="modalCopyBtn">Copy CSS</button>
+            </div>
+         </div>
+      </div>
+      <script src="script.js"></script>
+   </body>
+</html>
